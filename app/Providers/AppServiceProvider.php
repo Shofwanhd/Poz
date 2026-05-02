@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use App\Models\GeneralTab;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
@@ -25,7 +26,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $setting = GeneralTab::first();
+        $setting = null;
+
+        if (Schema::hasTable('general_tabs')) {
+            $setting = GeneralTab::first();
+        }
 
         View::share('appSetting', $setting);
 
