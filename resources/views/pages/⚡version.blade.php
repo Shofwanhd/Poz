@@ -32,7 +32,7 @@ new class extends Component {
         <flux:card size="sm" class="hover:bg-zinc-50 dark:hover:bg-zinc-700">
             <flux:heading size="xl" class="flex items-center gap-2">1.1.0
             </flux:heading>
-            <flux:text class="mt-1">3 May 2026</flux:text>
+            <flux:text class="mt-1">20 May 2026</flux:text>
             <flux:heading class="mt-4">Whats New?</flux:heading>
             <flux:text class="mt-4">New</flux:text>
             <flux:text class="mt-2">
