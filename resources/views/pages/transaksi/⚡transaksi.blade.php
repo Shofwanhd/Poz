@@ -5,9 +5,13 @@ use App\Models\Transaksi;
 
 new class extends Component {
     public $data;
-
+    public $transaksis = [];
     public $sortBy = 'name';
     public $sortDirection = 'desc';
+
+    public $sdate;
+    public $edate;
+
     public function sort($column)
     {
         if ($this->sortBy === $column) {
@@ -18,11 +22,28 @@ new class extends Component {
         }
     }
 
-    public function with()
+    public function mount()
     {
-        return [
-            'transaksis' => Transaksi::whereDate('created_at', today())->get(),
-        ];
+        // default: hari ini
+        $this->transaksis = Transaksi::whereDate('created_at', today())->orderBy('created_at')->get();
+
+        $this->sdate = today()->format('Y-m-d');
+        $this->edate = today()->format('Y-m-d');
+    }
+
+    public function filter()
+    {
+        $this->transaksis = Transaksi::query()
+            ->when(
+                $this->sdate && $this->edate,
+                function ($query) {
+                    $query->whereBetween('created_at', [$this->sdate . ' 00:00:00', $this->edate . ' 23:59:59'])->orderBy('created_at');
+                },
+                function ($query) {
+                    $query->whereDate('created_at', today())->orderBy('created_at');
+                },
+            )
+            ->get();
     }
 
     // public function changeStatusOrder($uuid)
@@ -40,7 +61,26 @@ new class extends Component {
 <div>
     {{-- When there is no desire, all things are at peace. - Laozi --}}
     <flux:heading size="xl" class="pb-4">Transaksi </flux:heading>
+    <div class="space-y-6 max-w-lg w-full mt-4 pb-10 items-center">
+        <form wire:submit.prevent="filter">
+            <div class="space-y-6">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="..."> <x-form.input type="date" label="Start Date" placeholder="Start Date"
+                            value="2005-01-18" name="sdate" wire:model="sdate" /></div>
+                    <div class="..."> <x-form.input type="date" label="End Date" placeholder="End Date"
+                            name="edate" wire:model="edate" /></div>
+                    {{-- <div class="space-y-2 mt-6">
+                        <flux:button variant="primary" class="w-full hidden md:block" type="submit">Tarik Report
+                        </flux:button>
+                    </div> --}}
+                </div>
+            </div>
 
+            <div class="grid grid-cols-4 gap-4 space-y-2 mt-4">
+                <flux:button variant="primary" class="w-full" type="submit">Filter Data</flux:button>
+            </div>
+        </form>
+    </div>
     {{-- VIEW DESKTOP --}}
     <div class="hidden md:block">
         <flux:table>

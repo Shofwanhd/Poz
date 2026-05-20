@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->configureDefaults();
 
-        if (config('app.env') === 'production' || config('app.url') !== 'http://localhost') {
+        if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }
     }

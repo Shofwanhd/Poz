@@ -29,10 +29,10 @@
                 </flux:sidebar.item>
             </flux:sidebar.group>
             <flux:sidebar.group :heading="__('Main Menu')" class="grid">
-                <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')"
+                {{-- <flux:sidebar.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')"
                     wire:navigate>
                     {{ __('Dashboard') }}
-                </flux:sidebar.item>
+                </flux:sidebar.item> --}}
                 <flux:sidebar.item icon="shopping-bag" :href="route('kelola-produk')"
                     :current="request()->routeIs('kelola-produk')" wire:navigate>
                     {{ __('Kelola Produk') }}
@@ -48,7 +48,7 @@
 
         <flux:sidebar.nav>
             <flux:sidebar.item icon="folder-git-2" href="/version">
-                {{ __('1.0.0 Beta') }}
+                {{ __('1.1.0') }}
             </flux:sidebar.item>
         </flux:sidebar.nav>
 

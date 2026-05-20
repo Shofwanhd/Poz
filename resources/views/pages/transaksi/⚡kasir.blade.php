@@ -131,7 +131,7 @@ new class extends Component {
 
     </div>
     @if (count($cart) > 0)
-        <div class="sticky z-50 bottom-0 pt-4 pb-4 mx-auto">
+        <div class="sticky z-10 relative bottom-0 pt-4 pb-4 mx-auto">
             <a href="{{ route('checkout') }}" wire:navigate>
                 <flux:card size="sm" class="bg-blue-400 hover:bg-blue-500 dark:hover:bg-blue-500 text-center">
                     <flux:heading size="lg" class="text-zinc-50 ">Checkout</flux:heading>

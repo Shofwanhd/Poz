@@ -10,9 +10,61 @@ new class extends Component {
 <div>
     <flux:heading size="xl" class="pb-4">Version History</flux:heading>
 
-    <div class="container">
+    {{-- <div class="container pt-4">
         <flux:card size="sm" class="hover:bg-zinc-50 dark:hover:bg-zinc-700">
             <flux:heading class="flex items-center gap-2">1.0.0 Beta
+            </flux:heading>
+            <flux:text class="mt-1">2 May 2026</flux:text>
+            <flux:heading class="mt-4">Whats New?</flux:heading>
+            <flux:text class="mt-4">New</flux:text>
+            <flux:text class="mt-2">
+                <ul class="list-disc ml-4">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <!-- ... -->
+                </ul>
+            </flux:text>
+        </flux:card>
+    </div> --}}
+
+    <div class="container pt-4">
+        <flux:card size="sm" class="hover:bg-zinc-50 dark:hover:bg-zinc-700">
+            <flux:heading size="xl" class="flex items-center gap-2">1.1.0
+            </flux:heading>
+            <flux:text class="mt-1">3 May 2026</flux:text>
+            <flux:heading class="mt-4">Whats New?</flux:heading>
+            <flux:text class="mt-4">New</flux:text>
+            <flux:text class="mt-2">
+                <ul class="list-disc ml-4">
+                    <li>Customize login page</li>
+                    <li>Customize sidebar logo</li>
+                    <li>Add username to register page</li>
+                    <li>Add date filter to transaction</li>
+                    <li>Add print button into transaction detail</li>
+                    <!-- ... -->
+                </ul>
+            </flux:text>
+            <flux:text class="mt-4">Change</flux:text>
+            <flux:text class="mt-2">
+                <ul class="list-disc ml-4">
+                    <li>Change login using username</li>
+                    <!-- ... -->
+                </ul>
+            </flux:text>
+            <flux:text class="mt-4">Fix</flux:text>
+            <flux:text class="mt-2">
+                <ul class="list-disc ml-4">
+                    <li>Fix bugs checkout button over sidebar</li>
+                    <!-- ... -->
+                </ul>
+            </flux:text>
+        </flux:card>
+    </div>
+
+    <div class="container pt-4">
+        <flux:card size="sm" class="hover:bg-zinc-50 dark:hover:bg-zinc-700">
+            <flux:heading size="xl" class="flex items-center gap-2">1.0.0
             </flux:heading>
             <flux:text class="mt-1">2 May 2026</flux:text>
             <flux:heading class="mt-4">Whats New?</flux:heading>
@@ -28,7 +80,6 @@ new class extends Component {
                     <!-- ... -->
                 </ul>
             </flux:text>
-
         </flux:card>
     </div>
 </div>

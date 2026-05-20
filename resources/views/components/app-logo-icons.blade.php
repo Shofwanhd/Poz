@@ -5,15 +5,15 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" {{ $attributes }}>
     <!-- Text -->
-    <text x="0" y="28" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700" fill="#000">
+    <text x="0" y="28" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="700" fill="#000">
         PoZ
     </text>
 
     <!-- Dot -->
-    <circle cx="100" cy="20" r="5" fill="#6366f1" />
+    <circle cx="117" cy="25 " r="5" fill="#6366f1" />
 
     <!-- Subtitle -->
-    <text x="70" y="38" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#333">
+    <text x="75" y="38" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#333">
         By Shd
     </text>
 </svg>
